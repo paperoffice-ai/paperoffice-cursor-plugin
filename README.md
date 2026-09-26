@@ -39,9 +39,27 @@ runs tools that create, change, delete or send. Every tool description starts
 with `READ-ONLY.`, `WRITES DATA.` or `DESTRUCTIVE.` so the agent knows the
 effect before it calls.
 
+## Skills included
+
+The plugin ships five Agent Skills in `skills/`. Cursor loads them automatically;
+the agent applies the matching one when a task touches PaperOffice.
+
+| Skill | Teaches |
+|-------|---------|
+| `paperoffice-api-integration` | writing code against `api.paperoffice.ai`: auth, `job/add → job/get`, Start-SLA lanes, error codes |
+| `paperoffice-invoice-extraction` | IDP for invoices: `workflow` pipeline, `_supplier_name` / `_total_amount` field paths, validation, batch CSV |
+| `paperoffice-ocr` | AI-OCR modes `text` / `grid` / `complete`, handwriting and forms, `job_result` |
+| `paperoffice-dms-documents` | search, read, three-step upload, organise and safely delete documents via the MCP tools |
+| `paperoffice-mcp-tool-discovery` | reaching all 300+ tools through `po_mcp_tools_search → schema → call_read / call_write` |
+
+The same skills are published standalone for Claude Code and claude.ai in
+[paperoffice-ai/paperoffice-skills](https://github.com/paperoffice-ai/paperoffice-skills).
+
 ## Setup
 
-1. Sign in at [app.paperoffice.ai](https://app.paperoffice.ai) and create a
+1. No account yet? Create a free one at
+   [app.paperoffice.ai/en/register/](https://app.paperoffice.ai/en/register/).
+   Then sign in at [app.paperoffice.ai](https://app.paperoffice.ai) and create a
    **user token** (`po_ut_…`) or a **group token** (`po_gt_…`) under
    *Account → API*. A group token limits the plugin to the workspaces of that
    group.
