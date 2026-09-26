@@ -1,0 +1,26 @@
+{
+  "name": "paperoffice",
+  "displayName": "PaperOffice",
+  "version": "1.0.0",
+  "description": "Search, read and create documents in your PaperOffice account from Cursor. Remote MCP server, OAuth 2.1 or PaperOffice user token, EU hosted.",
+  "author": {
+    "name": "PaperOffice",
+    "email": "support@paperoffice.ai"
+  },
+  "homepage": "https://paperoffice.ai/en/developer/mcp/",
+  "repository": "https://github.com/paperoffice-ai/paperoffice-cursor-plugin",
+  "license": "MIT",
+  "keywords": ["paperoffice", "paperoffice mcp", "paperoffice documents", "document ai", "dms"],
+  "logo": "assets/logo.png",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "PAPEROFFICE_TOKEN": {
+        "type": "string",
+        "title": "PaperOffice token",
+        "description": "User or group token (po_ut_ or po_gt_) from app.paperoffice.ai. System keys (po_sk_) and publishable keys (po_pk_) are rejected by the server."
+      }
+    },
+    "required": ["PAPEROFFICE_TOKEN"]
+  }
+}
