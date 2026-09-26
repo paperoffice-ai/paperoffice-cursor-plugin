@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "paperoffice": {
+      "url": "https://mcp.paperoffice.ai/cursor",
+      "headers": {
+        "Authorization": "Bearer ${PAPEROFFICE_TOKEN}"
+      }
+    }
+  }
+}
